@@ -93,7 +93,7 @@ jobs:
           </plist>
           EOF
           fi
-          macdeployqt omawrite.app -dmg -always-overwrite -qmldir ../src
+          macdeployqt omawrite.app -dmg -always-overwrite -qmldir=../src
           mv omawrite.dmg omawrite-macos.dmg
 
       - name: Upload .dmg
