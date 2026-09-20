@@ -23,7 +23,7 @@ jobs:
             archlinux:latest \
             bash -c '
               set -euo pipefail
-              pacman -Sy --noconfirm --needed base-devel git qt6-base qt6-declarative
+              pacman -Sy --noconfirm --needed base-devel git qt6-base qt6-declarative xdg-desktop-portal
               useradd -m builder
               chown -R builder:builder /workspace
               su builder -c "cd /workspace/pkgbuild && makepkg -sf --noconfirm"
@@ -48,7 +48,6 @@ jobs:
           host: 'mac'
           target: 'desktop'
           arch: 'clang_64'
-          modules: 'qtbase qtdeclarative'
           cache: true
 
       - name: Build
