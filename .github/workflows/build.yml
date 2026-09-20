@@ -54,7 +54,7 @@ jobs:
         run: |
           mkdir -p build-macos
           cd build-macos
-          qmake ../omawrite.pro
+          qmake ../omawrite.pro QMAKE_CXXFLAGS+="-Wno-error=implicit-function-declaration"
           make -j"$(sysctl -n hw.ncpu)"
 
       - name: Package .app and .dmg
